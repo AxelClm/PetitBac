@@ -1,5 +1,6 @@
 <?php  
 session_start();
+@include("fonctionsPhp/FSalles.php");
 if (isset($_GET['disconnect'])) {
     // Détruit toutes les variables de session
     $_SESSION = array();
@@ -15,11 +16,11 @@ if (isset($_GET['disconnect'])) {
     header("location: login.php");
     exit();
 }
-if (isset($_GET['IDSalle'])){
-	if (!isset($_SESSION['num_user']) || !isset($_SESSION['login'])) {
-    	header("location: redirection.php?disconnect=true");
-    	exit();
-	}
+
+if (isset($_GET['getPublicSalles'])){
+    $rows=getPublicSalles();
+    echo json_encode($rows);
+    exit();
 }
 
 ?>

@@ -1,9 +1,13 @@
 <?php  
-
-if (isset($_SESSION['login']) && isset($_SESSION['num_user'])) {
+session_start();
+include("fonctionsPhp/FConnection.php");
+if (isset($_SESSION['username']) && isset($_SESSION['id'])) {
 		header("location: home.php");
 		exit();
 	}
+if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
+	tryConnect($_POST['pseudo'],$_POST['mdp']);
+}
 
 ?>
 <!DOCTYPE html>
