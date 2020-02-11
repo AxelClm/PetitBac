@@ -3,14 +3,13 @@ body{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-size: cover;
   background-color: #f6f4f4;
 }
-#register{
-  text-decoration: none;
+#accueil {
+	text-decoration: none;
 }
 #error {
-  width: 280px;
+  width:280px;
   text-align: center;
   border: 2px solid red;
   background-color: red;
@@ -23,7 +22,7 @@ body{
   transform: translate(-50%,-50%);
   color: white;
 }
-.login-box{
+.register-box{
   width: 280px;
   position: absolute;
   top: 50%;
@@ -31,8 +30,7 @@ body{
   transform: translate(-50%,-50%);
   color: black;
 }
-.login-box h1{
-  color: black;
+.register-box h1{
   float: left;
   font-size: 40px;
   border-bottom: 6px solid red;
@@ -54,7 +52,7 @@ body{
 }
 .textbox input{
   border: none;
-  outline: none;  
+  outline: none;
   background: none;
   color: black;
   font-size: 18px;
@@ -62,6 +60,7 @@ body{
   float: left;
   margin: 0 10px;
 }
+
 .btn{
   width: 100%;
   background-color: red;

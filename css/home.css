@@ -1,0 +1,122 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #f6f4f4;
+  height: 100%;
+  width: 100%;
+}
+header{
+	height: 60px;
+	background: #fff;
+	top:0px;
+	width: 100%;
+	overflow: hidden;
+	display:inline-block;
+}
+.container{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+.navLeft{
+	display: inline-block;
+	margin-left: 5%;
+	width: 15%;
+	height: 100%;
+}
+.imgContainer{
+	display: inline-block;
+	height: 100%;
+}
+img{
+	display: inline-block;
+	max-height: 100%;
+	max-width: 95%;
+	min-height: 95%;
+	height: auto;
+	width: auto;
+}
+
+.navCenter{
+	display:inline-block;
+	width: 50%;
+	height: 100%;
+	margin-right: 7%;
+}
+.item{
+	top: 0px;
+	display: inline-block;
+	height: 100%;
+	width: 20%
+	margin-left:10%;
+	display: flex;
+	float: left;
+	margin-right: 10%;
+	flex-direction: column;
+	cursor: pointer;
+}
+.text{
+	margin: auto;
+	letter-spacing: 0.02em;
+	color: black;
+	font-size: 14px;
+}
+.underText{
+	width: 100%;
+	height: 2px;
+	background-color: red;
+	visibility: hidden;
+  	opacity: 0;
+  	transition: visibility 0s 1s, opacity 1s linear;
+
+}
+
+.item:hover .underText{
+	visibility: visible;
+  	opacity: 1;
+  	transition: opacity 1s linear;
+}
+.navRight{
+	display: inline-block;
+	height: 100%;
+	width: 20%;
+}
+#itemDisco{
+	cursor: pointer;
+	height: 100%;
+	width: 30%;
+	margin-left: 10%;
+	color: black;
+	text-decoration: none;
+	display: flex;
+	float: left;
+	flex-flow: column;
+}
+#itemProfil{
+	height: 100%;
+	width: 40%;
+	display: flex;
+	float: left;
+}
+
+#itemProfil i{
+	margin: auto;
+	margin-right: 5px;
+	font-size: 25px;
+}
+#itemProfil p{
+	margin: auto;
+	margin-left: 5px; 
+	font-size: xx-small;
+}
+#itemDisco i{
+	margin: auto;
+	font-size: 25px;
+}
+#itemDisco:hover .underText{
+	visibility: visible;
+  	opacity: 1;
+  	transition: opacity 1s linear;
+}
