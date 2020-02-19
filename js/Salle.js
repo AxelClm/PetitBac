@@ -5,7 +5,7 @@ class Salle{
 		this.taille = taille;
 		this.placeRestante = placeRestante;
 		this.categories = categories;
-		this.LastDraw = 0;
+		this.LastDraw=0;
 	}
 	drawSalle(divCible){
 		this.salleContainer = document.createElement("div");
@@ -111,6 +111,31 @@ function filtrage(item,index,arr){
 		}	
 	}
 }
+function saveCoord(item){
+	if(item!=null){
+		let salle = document.querySelector("#"+item.salleContainer.id);
+		item.lastCordX = salle.offsetLeft;
+		item.lastCordY = salle.offsetTop;
+		console.log(item.lastCordX);
+		console.log(item.lastCordY);
+		console.log("-----------");
+	}
+}
+function moove(item){
+	if(item != null){
+		if(item.lastCordX != null && item.lastCordY !=null){
+			let salle = document.querySelector("#"+item.salleContainer.id);
+			let mX = item.lastCordX-salle.offsetLeft;
+			let mY = item.lastCordY-salle.offsetTop;
+			let tX = "translate("+mX+"px,"+mY+"px)";
+			let tY = "translate(0px,0px)";
+			salle.animate([{//from
+               			transform: tX},
+					{//to
+						transform: tY}],600);
+		}
+	}
+}
 function updateSalle(divCible) {
 	var xhr = new XMLHttpRequest();
         xhr.open('GET','redirection.php?getPublicSalles=',true);
@@ -135,7 +160,12 @@ function updateSalle(divCible) {
                		divCible.tabSalle[temptab[i]["IDSalle"]] = salle;
                	}
                }
+               //on supprime les anciens div pour réorganiser
                divCible.tabSalle.forEach(filtrage,divCible);
+               //on déplace les div par rapports a leurs ancienne coord
+               divCible.tabSalle.forEach(moove);
+               //on sauvegarde maintenant les coord
+               divCible.tabSalle.forEach(saveCoord);
             }});
         xhr.send();
     }
